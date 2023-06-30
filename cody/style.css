@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    background-color: blue;
+    height: 100px
+    
+  } 
+  body {
+    color: black;
+  }
+  h1 {
+    color: white;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  .display{
+      width : 32.5%;
+    padding: 15px;
+    margin: 15px;
+      height: 75px;
+      display: inline-block;
+      border: 1px solid black;
+  }
