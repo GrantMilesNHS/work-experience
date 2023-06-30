@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.header {
+  width: 100%;
+  background-color: blue;
+  height: 100px
+  
+} 
+body {
+  color: black;
+}
+h1 {
+  color: white;
+}
+table, th, td {
+  border: 1px solid black;
+}
+.display{
+	width : 32.5%;
+  padding: 15px;
+  margin: 15px;
+    height: 100px;
+	display: inline-block;
+    border: 1px solid black;
+}
+</style>
+<title>Page Title</title>
+<script> 
+const userAction = async () => { 
+  const response = await fetch("http://localhost:5000/patients?count=5");
+  const myJson = await response.json(); 
+
+  myJson.forEach(element => {
+    console.log(element.firstName);
+    var root = document.getElementById("root");
+    var html = root.innerHTML;
+    root.innerHTML += '</div><div class="display"><div> ' + element.firstName + '</div><div> ' + element.email + ' </div><div> ' + element.nhsNumber + ' </div></div>';
+  });
+  }
+
+// window.onload = function(e) {
+// $().load("http://localhost:5000/patient?count=5");    
+//   }
+</script>
+</head>
+<body>
+<div>
+<div class="header"><h1>Patient Infomation</h1></div>
+
+<button onclick="userAction()">Click me for data</button>
+
+<div id="root">
+
+</div>
+</body>
+</html>
